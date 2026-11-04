@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="logo.webp" alt="Logotipo Oficial da Loja" />
+                <h1>BookLovers💜</h1>
+            </a>
+        </div>
+
+          <div class="search-box">
+        <input type="text" placeholder="Busque por livros, autores...">
+        <button>🔍</button>
+    </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="romances">Romances</a></li>
+                <li><a href="fantasias">Fantasias</a></li>
+                <li><a href="terror">Terror</a></li>
+                <li><a href="Thriller">Thriller</li>
+            </ul>
+
+               <div class="nav-icons">
+            <a href="#perfil" aria-label="Minha Conta">👤</a>
+            <a href="carrinho" aria-label="Carrinho de compras">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+            <section class="hero">
+        <div class="carousel-container">
+            <div class="carousel-track">
+
+                <!-- BANNER 1 -->
+                <div class="carousel-item" id="banner-1">
+                    <img src="jantarsecreto.jpg" alt="Fundo Promoção Thriller" class="banner-bg-img">
+
+                    <div class="carousel-content">
+                        <div class="book-cover">
+                            <img src="jantarsecreto.jpg" alt="Livro Jantar Secreto">
+                        </div>
+                        <div class="book-info">
+                            <h2>Jantar Secreto</h2>
+                            <p>Se impressione com essa história que está com 30% de desconto.</p>
+                            <a href="#comprar" class="carousel-btn">Comprar Agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BANNER 2 -->
+                <div class="carousel-item" id="banner-2">
+                    <img src="romance.jpg" alt="Fundo Promoção Romance" class="banner-bg-img">
+                    
+                    <a href="#banner-1" class="nav-arrow prev-arrow">&#10094;</a>
+                    <a href="#banner-3" class="nav-arrow next-arrow">&#10095;</a>
+
+                    <div class="carousel-content">
+                        <div class="book-cover">
+                            <img src="romance.jpg" alt="Livro A Professora do Jogador">
+                        </div>
+                        <div class="book-info">
+                            <h2>A Professora do Jogador</h2>
+                            <p>Até 5x sem juros.</p>
+                            <a href="#ver-mais" class="carousel-btn">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BANNER 3 -->
+                <div class="carousel-item" id="banner-3">
+                    <img src="fantasia.jpg" alt="Fundo Promoção Fantasia" class="banner-bg-img">
+                    
+                    <a href="#banner-2" class="nav-arrow prev-arrow">&#10094;</a>
+                    <a href="#banner-1" class="nav-arrow next-arrow">&#10095;</a>
+
+                    <div class="carousel-content">
+                        <div class="book-cover">
+                            <img src="fantasia.jpg" alt="Livro A Rainha Sul">
+                        </div>
+                        <div class="book-info">
+                            <h2>A Rainha Sul</h2>
+                            <p>Frete grátis para todo o Brasil usando o cupom FRETELIVRO.</p>
+                            <a href="#aproveitar" class="carousel-btn">Aproveitar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-section">
+    <h2>Navegue por Categorias</h2>
+    
+    <div class="categories-container">
+        
+        <!-- Categoria 1 -->
+        <a href="#romances" class="category-item">
+            <div class="category-img-wrapper">
+                <img src="romance2.png" alt="Categoria Romances">
+            </div>
+            <span>Romances</span>
+        </a>
+
+        <!-- Categoria 2 -->
+        <a href="#fantasias" class="category-item">
+            <div class="category-img-wrapper">
+                <img src="fantasia2.jpg" alt="Categoria Fantasias">
+            </div>
+            <span>Fantasias</span>
+        </a>
+
+        <!-- Categoria 3 -->
+        <a href="#terror" class="category-item">
+            <div class="category-img-wrapper">
+                <img src="suspense.webp" alt="Categoria Terror">
+            </div>
+            <span>Thriller</span>
+        </a>
+
+        <!-- Categoria 4 -->
+        <a href="#Thriller" class="category-item">
+            <div class="category-img-wrapper">
+                <img src="terror.jpg" alt="Categoria Terror">
+            </div>
+            <span>Terror</span>
+        </a>
+    </div>
+</section>
+
+<section class="products-section">
+    <h2>Nossos Livros em Destaque</h2>
+    
+        <div class="products-grid">
+        
+        <!-- PRODUTO 1 -->
+        <article class="product-card">
+            <figure class="product-img-container">
+                <img src="freud.jpg" 
+                     alt="Livro de romance com capa rosa ilustrada mostrando um casal de jovens" 
+                     width="300" 
+                     height="400" 
+                     loading="lazy">
+            </figure>
+            <figcaption class="product-info">
+                <h3>Psicologia das massas e anásile do eu</h3>
+                <p class="product-author">Freud</p>
+                <p class="product-price">R$ 49,90</p>
+                <button class="buy-button">Adicionar ao Carrinho</button>
+            </figcaption>
+        </article>
+
+        <!-- PRODUTO 2 -->
+        <article class="product-card">
+            <figure class="product-img-container">
+                <img src="oabismodecelina.jpg" 
+                     alt="Livro de fantasia medieval com dragão dourado em relevo na capa escura" 
+                     width="300" 
+                     height="400" 
+                     loading="lazy">
+            </figure>
+            <figcaption class="product-info">
+                <h3>O abismo de Celina</h3>
+                <p class="product-author">Ariani Castelo</p>
+                <p class="product-price">R$ 39,90</p>
+                <button class="buy-button">Adicionar ao Carrinho</button>
+            </figcaption>
+        </article>
+
+        <!-- PRODUTO 3 -->
+        <article class="product-card">
+            <figure class="product-img-container">
+                <img src="jogodoamorparadois.jpg" 
+                     alt="Livro de terror psicológico com fundo preto e uma silhueta misteriosa em uma floresta" 
+                     width="300" 
+                     height="400" 
+                     loading="lazy">
+            </figure>
+            <figcaption class="product-info">
+                <h3>Jogo do amor para dois</h3>
+                <p class="product-author">Ali Hazelwood</p>
+                <p class="product-price">R$ 45,90</p>
+                <button class="buy-button">Adicionar ao Carrinho</button>
+            </figcaption>
+        </article>
+
+        <!-- PRODUTO 4 -->
+        <article class="product-card">
+            <figure class="product-img-container">
+                <img src="ahistoriadomundo.jpg" 
+                     alt="Livro de suspense policial mostrando uma fita de isolamento de cena de crime" 
+                     width="300" 
+                     height="400" 
+                     loading="lazy">
+            </figure>
+            <figcaption class="product-info">
+                <h3>A história do mundo para quem tem pressa</h3>
+                <p class="product-author">Emma Marriott</p>
+                <p class="product-price">R$ 45,00</p>
+                <button class="buy-button">Adicionar ao Carrinho</button>
+            </figcaption>
+        </article>
+
+        <!-- PRODUTO 5 -->
+        <article class="product-card">
+            <figure class="product-img-container">
+                <img src="box.webp" 
+                     alt="Livro clássico de drama com caligrafia dourada antiga e capa dura azul marinho" 
+                     width="300" 
+                     height="400" 
+                     loading="lazy">
+            </figure>
+            <figcaption class="product-info">
+                <h3>BOX Raphael Montes</h3>
+                <p class="product-author">Rapahel Montes</p>
+                <p class="product-price">R$ 125,90</p>
+                <button class="buy-button">Adicionar ao Carrinho</button>
+            </figcaption>
+        </article>
+
+        <!-- PRODUTO 6 (Esgotado) -->
+        <article class="product-card product-sold-out">
+            <figure class="product-img-container">
+                <img src="asserpentes.jpg" 
+                     alt="Livro de ficção científica com ilustrações de planetas e uma nave espacial neon" 
+                     width="300" 
+                     height="400" 
+                     loading="lazy">
+                <div class="sold-out-badge">ESGOTADO</div> 
+            </figure>
+            <figcaption class="product-info">
+                <h3>A serpente e as assas feitas de noite</h3>
+                <p class="product-author">Carissa Broadbent</p>
+                <p class="product-price">R$ 59,90</p>
+                <button class="buy-button" disabled style="background-color: #ccc; cursor: not-allowed;">Indisponível</button>
+            </figcaption>
+        </article>
+
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-copy">
+            <p>&copy; BookLovers. Todos os direitos reservados.</p>
+        </div>
+
+        <div class="footer-payments">
+            <span>Formas de Pagamento:</span>
+            <div class="payment-badges">
+                
+                <span class="badge" title="Pix">💵 Pix</span>
+                <span class="badge" title="Cartão de Crédito">💳 Crédito</span>
+                <span class="badge" title="Boleto Bancário">📄 Boleto</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="container">
+        
+        <!-- 1. Layout de Duas Colunas -->
+        <div class="product-wrapper">
+            
+            <!-- Coluna da Esquerda: Galeria de Imagens -->
+            <div class="column-left">
+                <!-- Foto Principal Grande -->
+                 <img src="asas.jpg" alt="Foto principal do Livro de Fantasia" 
+                 class="main-image">
+                <!-- Miniaturas (Thumbnails) -->
+                <div class="thumbnails">
+        <img src="powerless.jpg" alt="Visão frontal" class="thumb">
+        <img src="caçador.jpg" alt="Visão lateral" class="thumb">
+        <img src="omassacre.jpg" alt="Detalhe dos switches" class="thumb">
+        <img src="academia.jpg" alt="Iluminação RGB" class="thumb">
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Informações de Compra -->
+            <div class="column-right">
+                
+                <!-- Trilha de Navegação (Breadcrumb) -->
+                <nav class="breadcrumb">
+                    <a href="#">Início</a> &gt; <a href="#">Periféricos</a> &gt; <a href="#">Teclado</a>
+                </nav>
+
+                <!-- Título h1 -->
+                <h1 class="product-title">Fantasias em promoção</h1>
+
+                <!-- Avaliação em Estrelas -->
+                <div class="stars">
+                    ★★★★★ <span style="color:#666; font-size:14px;">(4.9)</span>
+                </div>
+
+                <!-- Preço Antigo/Atual -->
+                <div class="price-box">
+                    <span class="old-price">R$ 45,00</span>
+                    <span class="current-price">R$ 29,90</span>
+                </div>
+
+                <!-- Seletor de Opções (<select>) -->
+                <div class="selectors">
+                    <label for="switch-color">Escolha o modelo:</label>
+                    <select id="switch-color" name="switch-color">
+                        <option value="blue">Capa Dura</option>
+                        <option value="red">Capa Mole</option>
+                        <option value="brown">Edição Especial</option>
+                    </select>
+                </div>
+
+                <!-- Botão Principal -->
+                <a href="carrinho.html" class="btn-add-to-cart">Adicionar ao Carrinho</a>
+
+            </div>
+        </div>
+
+        <hr style="border: 0; height: 1px; background: #ddd; margin: 40px 0;">
+
+        <!-- 2. Tabela de Especificações Técnicas -->
+        <h2 class="spec-table-title">Especificações</h2>
+        
+        <table class="spec-table">
+            <tbody>
+                <tr>
+                    <th scope="row">Editora</th>
+                    <td>Rocco</td>
+                </tr>
+                <tr>
+                    <th scope="row">Peso</th>
+                    <td>850g</td>
+                </tr>
+                <tr>
+                    <th scope="row">Dimensões</th>
+                    <td>16xm x 15cm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Garantia</th>
+                    <td>12 meses</td>
+                </tr>
+                <tr>
+                    <th scope="row">Material</th>
+                    <td>Papel</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+
+</body>
+</html>
