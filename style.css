@@ -1,14 +1,32 @@
-Aqui está o seu arquivo style.css completo e unificado. Adicionei os estilos das novas páginas diretamente no código que você enviou, mantendo a sua paleta de cores original e cobrindo todos os requisitos obrigatórios das imagens (como o tamanho de 64px com object-fit: cover para as mídias e as regras de feedback visual com :focus:valid e :focus:invalid).
-
-Código CSS Atualizado e Unificado (style.css)
-
-Substitua todo o conteúdo do seu arquivo style.css por este bloco abaixo:
-css
 /* ==========================================================================
-   CÓDIGO ORIGINAL ENVIADO PELO USUÁRIO (CABEÇALHO, HERO, VITRINE E PRODUTO)
+   1. RESET GLOBAL & CONFIGURAÇÕES BASE
    ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-/* 1. Configuração e Fundo do Cabeçalho Principal */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO PRINCIPAL DA LOJA (HEADER)
+   ========================================================================== */
 header {
   display: flex;
   justify-content: space-between; /* Empurra a logo para a esquerda e o <nav> para a direita */
@@ -21,7 +39,21 @@ header {
   z-index: 1000;                 /* Garante que o menu fique por cima do carrossel */
 }
 
-/* 2. Controle do tamanho da Imagem da Logo */
+/* Controle do tamanho da Imagem da Logo */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 15px;               
+}
+
+.logo h1 {
+  font-size: 1.9rem;      
+  font-weight: 700;
+  color: #2f3542;          
+  margin: 0;
+  white-space: nowrap;     
+}
+
 .logo img {
   height: 95px;                  /* Define uma altura ideal e bem ajustada para a logo */
   width: auto;                   /* Mantém a proporção correta para não distorcer */
@@ -30,20 +62,51 @@ header {
   object-fit: cover;
 }
 
-/* 3. Estrutura do Menu de Navegação (nav) */
+/* Caixa de Busca */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  padding: 8px 14px;
+  width: 320px;
+  transition: all 0.2s ease;
+}
+
+.search-box:focus-within {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box input {
+  background: none;
+  border: none;
+  color: #2f3542;
+  width: 100%;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: rgba(47, 53, 66, 0.6);
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* Estrutura do Menu de Navegação (nav) */
 nav {
   display: flex;
   align-items: center;           /* Alinha a lista de links e o carrinho na mesma linha */
   gap: 30px;                     /* Espaçamento seguro entre o menu de texto e o ícone do carrinho */
 }
 
-.nav-icons {
-  display: flex;
-  flex-direction: row; /* Força ficar na horizontal, e não empilhado */
-  gap: 15px;           /* Espaço entre um ícone e outro */
-  align-items: center;
-}
-/* 4. Alinhamento dos Links (ul) */
+/* Alinhamento dos Links (ul) */
 .nav-links {
   display: flex;                 /* Coloca os itens do menu (li) um ao lado do outro */
   list-style: none;              /* Remove as bolinhas padrões da lista */
@@ -52,11 +115,9 @@ nav {
   padding: 0;
 }
 
-/* 5. Estilização Visual das Palavras (Links) */
+/* Estilização Visual das Palavras (Links) */
 .nav-links a {
-  text-decoration: none;         /* Remove o sublinhado padrão de link */
   color: #4a4a4a;                /* Cor cinza escura moderna */
-  font-family: sans-serif;
   font-size: 1rem;
   font-weight: 600;              /* Deixa a fonte ligeiramente mais marcante */
   transition: color 0.2s ease;   /* Deixa a mudança de cor suave ao passar o mouse */
@@ -67,16 +128,22 @@ nav {
   color: #f069de;                /* Muda para a cor de destaque (Vermelho/Coral) */
 }
 
+.nav-icons {
+  display: flex;
+  flex-direction: row; /* Força ficar na horizontal, e não empilhado */
+  gap: 15px;           /* Espaço entre um ícone e outro */
+  align-items: center;
+}
+
 .nav-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #ffffff; /* Fundo branco como o da sua imagem */
+  background-color: #ffffff; /* Fundo branco */
   border-radius: 50%;
   color: #2f3542;
-  text-decoration: none;
   font-size: 1.2rem;
   transition: all 0.2s ease;
 }
@@ -86,27 +153,10 @@ nav {
   background-color: #ff4757; /* Cor de destaque ao passar o mouse */
   color: #ffffff;
 }
-/* 6. Estilização do Ícone de Carrinho */
-.cart-icon a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #f1f2f6;     /* Cria uma sutil bolinha cinza de fundo para o ícone */
-  border-radius: 50px;           /* Deixa o fundo perfeitamente redondo */
-  color: #2f3542;
-  transition: all 0.2s ease;
-}
 
-/* Efeito Hover no botão do carrinho */
-.cart-icon a:hover {
-  background-color: #ff4757;     /* Fundo fica vermelho ao passar o mouse */
-  color: #ffffff;                /* O ícone dentro dele fica branco */
-  transform: scale(1.08);        /* Dá um leve pulo de zoom */
-}
-
-/* ==================== ESTILO DO CARROSSEL (LIVRO + TEXTO) ==================== */
+/* ==========================================================================
+   3. INTERFACE DA PÁGINA INICIAL (INDEX / CARROSSEL / VITRINES)
+   ========================================================================== */
 .hero {
   width: 100%;
   background-color: #000000;
@@ -137,7 +187,7 @@ nav {
 /* Imagem de fundo do banner geral */
 .banner-bg-img {
   width: 100%;
-  height: 550px; /* Aumentamos um pouco a altura para acomodar o livro */
+  height: 550px; /* Altura para acomodar o livro */
   object-fit: cover;
   display: block;
 }
@@ -150,7 +200,6 @@ nav {
   width: 100%;
   height: 100%;
   background: rgba(250, 105, 238, 0.65); /* Filtro escuro para dar excelente leitura */
-  
   display: flex;
   flex-direction: row; /* Coloca Livro e Texto lado a lado */
   justify-content: center;
@@ -166,7 +215,7 @@ nav {
 }
 
 .book-cover img {
-  height: 350px; /* Altura ideal da capa do livro na tela */
+  height: 350px; /* Altura da capa do livro na tela */
   width: auto;
   border-radius: 8px; /* Cantos arredondados na capa */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra pesada para dar efeito 3D */
@@ -176,7 +225,7 @@ nav {
 /* Lado Direito: Textos e Botão */
 .book-info {
   max-width: 500px;
-  text-align: left; /* Alinha o texto à esquerda, combinando com o design lateral */
+  text-align: left; /* Alinha o texto à esquerda */
 }
 
 .book-info h2 {
@@ -196,7 +245,6 @@ nav {
   display: inline-block;
   background-color: #ff4757;
   color: #ffffff;
-  text-decoration: none;
   padding: 14px 35px;
   font-weight: bold;
   font-size: 1rem;
@@ -211,116 +259,74 @@ nav {
   transform: translateY(-3px);
 }
 
-/* RESPONSIVIDADE: Ajustes para telas menores de celular */
-@media (max-width: 768px) {
-  .banner-bg-img {
-    height: 600px; /* No celular precisa de mais altura vertical */
-  }
-  
-  .carousel-content {
-    flex-direction: column; /* No celular, coloca o livro EM CIMA do texto */
-    gap: 20px;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .book-cover img {
-    height: 220px; /* Diminui o livro no celular */
-  }
-  
-  .book-info {
-    text-align: center;
-  }
-  
-  .book-info h2 {
-    font-size: 1.8rem;
-  }
-  
-  .book-info p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-}
-
-/* ==================== SEÇÃO DE CATEGORIAS CIRCULARES ==================== */
+/* Seção de Categorias Circulares */
 .categories-section {
   padding: 60px 5%;
   text-align: center;
   background-color: #f085f8;
 }
 
-.categories-section h2 {
+.categories-section h2, .products-section h2 {
   font-size: 2rem;
   margin-bottom: 40px;
   color: #2f3542;
   font-weight: 700;
 }
 
-/* Container que alinha as 4 categorias horizontalmente */
 .categories-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* Permite quebrar de linha em telas pequenas */
-  gap: 40px;       /* Espaçamento uniforme entre os círculos */
+  flex-wrap: wrap; /* Quebra de linha em telas pequenas */
+  gap: 40px;       /* Espaçamento uniforme */
 }
 
-/* Item individual da categoria (Link) */
 .category-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none;
   color: #2f3542;
   font-weight: 600;
   font-size: 1.1rem;
-  gap: 15px; /* Espaço entre a imagem circular e o texto abaixo dela */
+  gap: 15px; 
 }
 
-/* Wrapper para controlar o corte da borda e animação com segurança */
+/* Imagem redonda perfeita */
 .category-img-wrapper {
-  width: 150px;         /* REQUISITO: Largura idêntica à altura */
-  height: 150px;        /* REQUISITO: Altura idêntica à largura */
-  border-radius: 50%;   /* REQUISITO: Círculo perfeito */
-  overflow: hidden;     /* Garante que a imagem não vaze para fora do círculo */
-  border: 3px solid transparent; /* Reserva o espaço para a borda no hover não mexer o layout */
-  transition: all 0.3s ease;    /* Transição suave para a animação */
+  width: 150px;         /* Requisito: Largura idêntica à altura */
+  height: 150px;        /* Requisito: Altura idêntica à largura */
+  border-radius: 50%;   /* Requisito: Círculo perfeito */
+  overflow: hidden;     
+  border: 3px solid transparent; 
+  transition: all 0.3s ease;    
 }
 
-/* Estilização interna da imagem da categoria */
 .category-img-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;    /* REQUISITO: Ajusta a foto sem distorcer ou esmagar */
+  object-fit: cover;    /* Requisito: Ajusta a foto sem distorcer */
   display: block;
-  transition: transform 0.3s ease; /* Transição para o efeito de ampliação */
+  transition: transform 0.3s ease; 
 }
 
-/* REQUISITO: Efeitos ao passar o mouse (:hover) */
+/* Requisitos Hover das Categorias */
 .category-item:hover .category-img-wrapper {
-  border-color: #ff4757; /* Adiciona uma borda colorida (mesmo tom do botão/carrinho) */
+  border-color: #ff4757; 
 }
 
 .category-item:hover .category-img-wrapper img {
-  transform: scale(1.08); /* REQUISITO: Leve ampliação da imagem de 1.08x */
+  transform: scale(1.08); /* Requisito: Ampliação de 1.08x */
 }
 
-/* Efeito simples de cor também no texto ao passar o mouse */
 .category-item:hover span {
   color: #ff4757;
 }
 
-/* ==================== VITRINE DE PRODUTOS PADRONIZADA ==================== */
+/* Vitrine de Produtos Padronizada */
 .products-section {
   padding: 60px 5%;
   background-color: #c25eca;
   text-align: center;
-}
-
-.products-section h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #2f3542;
 }
 
 .products-grid {
@@ -344,6 +350,7 @@ nav {
   background-color: #f4f1f5;
   aspect-ratio: 3 / 4; 
 }
+
 .product-img-container img {
   width: 100%;
   height: 100%;
@@ -385,70 +392,77 @@ nav {
   margin-top: 5px;
 }
 
-/* Botão de compra interno da vitrine */
 .buy-button {
-Use o código com cuidado.
-background-color: #2f3542;
-color: #ffffff;
-border: none;
-padding: 10px;
-border-radius: 4px;
-font-weight: 600;
-cursor: pointer;
-margin-top: 10px;
-transition: background-color 0.2s ease;
+  background-color: #2f3542;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
 }
+
 .buy-button:hover {
-background-color: #ff4757; /* Fica vermelho ao passar o mouse */
+  background-color: #ff4757; 
 }
-/* ==================== PRODUTO ESGOTADO (FILTROS CSS) ==================== */
+
+/* Produto Esgotado com filtros */
 .product-sold-out .product-img-container {
-position: relative;
+  position: relative;
 }
+
 .product-sold-out .product-img-container img {
-filter: grayscale(100%);
-opacity: 0.7;
+  filter: grayscale(100%); 
+  opacity: 0.7;           
 }
+
 .sold-out-badge {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: rgba(231, 76, 60, 0.9);
-color: #fbf9f9;
-font-family: sans-serif;
-font-size: 0.9rem;
-font-weight: bold;
-letter-spacing: 1px;
-padding: 8px 16px;
-border-radius: 4px;
-text-transform: uppercase;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-pointer-events: none;
+  position: absolute;       
+  top: 50%;                 
+  left: 50%;                
+  transform: translate(-50%, -50%); 
+  background-color: rgba(231, 76, 60, 0.9); 
+  color: #fbf9f9;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
 z-index: 5;
 }
 .product-sold-out:hover .product-img-container img {
 transform: scale(1);
 }
-/* ==================== SEÇÃO DE DETALHES GERAIS ==================== */
+/* ==========================================================================
+4. INTERFACE DA PÁGINA INTERNA DO PRODUTO (PRODUTO.HTML)
+========================================================================== */
 .container {
 max-width: 1200px;
+width: 100%;
 margin: 40px auto;
-background: #fff;
+background: #ffffff;
 padding: 30px;
 border-radius: 8px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+clear: both;
 }
 .product-wrapper {
 display: flex;
 flex-wrap: wrap;
 gap: 40px;
 margin-bottom: 40px;
+width: 100%;
 }
 .column-left {
 flex: 1 1 450px;
+max-width: 100%;
 }
-/* Requisito Foto Principal: aspect-ratio 1/1 com object-fit cover */
+/* Requisito: Foto Principal quadrada 1/1 */
 .main-image {
 width: 100%;
 aspect-ratio: 1 / 1;
@@ -461,7 +475,7 @@ display: flex;
 gap: 12px;
 margin-top: 15px;
 }
-/* Requisito Miniaturas: aspect-ratio 1/1 com efeito de destaque no hover */
+/* Requisito: Miniaturas quadradas com destaque no hover */
 .thumb {
 flex: 1;
 aspect-ratio: 1 / 1;
@@ -480,17 +494,11 @@ flex: 1 1 450px;
 display: flex;
 flex-direction: column;
 gap: 20px;
+max-width: 100%;
 }
 .breadcrumb {
 font-size: 0.9rem;
 color: #747d8c;
-}
-.breadcrumb a {
-text-decoration: none;
-color: inherit;
-}
-.breadcrumb a:hover {
-text-decoration: underline;
 }
 .product-title {
 font-size: 2.2rem;
@@ -501,10 +509,6 @@ font-weight: 700;
 font-size: 1.1rem;
 color: #747d8c;
 margin-top: -10px;
-}
-.stars {
-color: #ffcc00;
-font-size: 1.1rem;
 }
 .price-box {
 padding: 10px 0;
@@ -537,8 +541,9 @@ width: 100%;
 padding: 12px;
 border: 1px solid #ced4da;
 border-radius: 4px;
-background-color: #fff;
+background-color: #ffffff;
 font-size: 0.95rem;
+outline: none;
 }
 .btn-add-to-cart {
 display: block;
@@ -549,16 +554,20 @@ padding: 14px;
 font-weight: 600;
 font-size: 1rem;
 border-radius: 4px;
-transition: background 0.2s;
 }
 .btn-add-to-cart:hover {
 background-color: #ff4757;
 }
-/* Requisito Tabela Semântica Zebrada */
+/* Requisito: Ficha Técnica em Tabela Semântica Zebrada */
+.technical-specifications {
+width: 100%;
+margin-top: 20px;
+}
 .spec-table-title {
 font-size: 1.4rem;
 margin-bottom: 15px;
 color: #2f3542;
+font-weight: 700;
 }
 .spec-table {
 width: 100%;
@@ -570,20 +579,19 @@ text-align: left;
 border-bottom: 1px solid #f1f2f6;
 font-size: 0.95rem;
 }
-/* Cabeçalho de Linha th scope="row" */
+/* Cabeçalho vertical */
 .spec-table th {
 font-weight: 600;
 color: #2f3542;
 width: 30%;
 }
-/* Efeito Zebrado :nth-child(even) */
+/* Efeito Zebrado tr */
 .spec-table tbody tr:nth-child(even) {
 background-color: #f9f9f9;
 }
 /* ==========================================================================
-NOVOS ESTILOS ADICIONADOS: PÁGINAS DO CARRINHO E CADASTRO (FOTOS COMPLEMENTARES)
+5. INTERFACE DO CARRINHO DE COMPRAS (CARRINHO.HTML)
 ========================================================================== */
-/* ==================== ESTILO ADICIONAL DA PÁGINA 2 (CARRINHO) ==================== */
 .cart-container {
 max-width: 1200px;
 margin: 40px auto;
@@ -627,7 +635,7 @@ display: flex;
 align-items: center;
 gap: 16px;
 }
-/* Requisito Obrigatório: miniatura quadrada 64px x 64px com object-fit: cover */
+/* Requisito: Mídia em miniatura quadrada 64px com object-fit cover */
 .product-thumb {
 width: 64px;
 height: 64px;
@@ -650,6 +658,7 @@ padding: 8px;
 border: 1px solid #ced4da;
 border-radius: 4px;
 text-align: center;
+outline: none;
 }
 .btn-remove {
 background: none;
@@ -657,7 +666,7 @@ border: none;
 cursor: pointer;
 font-size: 1.1rem;
 }
-/* Requisito Obrigatório: tfoot com colspan para mensagem de frete ou parcial */
+/* Requisito: tfoot com colspan unificado */
 .cart-table tfoot td {
 padding: 20px 16px;
 background-color: #fff1f2;
@@ -667,7 +676,7 @@ font-size: 0.95rem;
 border-bottom: none;
 border-radius: 4px;
 }
-/* CARD RESUMO LATERAL - REQUISITO 2 (CARRINHO) */
+/* Card Resumo Lateral */
 .order-summary {
 flex: 1 1 350px;
 background: #ffffff;
@@ -724,7 +733,7 @@ cursor: pointer;
 .btn-apply:hover {
 background-color: #ff4757;
 }
-/* Requisito Obrigatório: classe .btn-checkout */
+/* Requisito: Botão finalizar com classe btn-checkout */
 .btn-checkout {
 display: block;
 text-align: center;
@@ -737,7 +746,9 @@ border-radius: 4px;
 .btn-checkout:hover {
 background-color: #ff6b81;
 }
-/* ==================== ESTILO DA PÁGINA 3 (CADASTRO / FORMULÁRIO) ==================== */
+/* ==========================================================================
+6. INTERFACE DE REGISTRO / COMPRA (CADASTRO.HTML)
+========================================================================== */
 .form-main {
 max-width: 800px;
 margin: 40px auto;
@@ -746,7 +757,7 @@ padding: 40px;
 border-radius: 8px;
 border: 1px solid #e2e8f0;
 }
-/* Requisito Obrigatório: estilização de fieldset e legend */
+/* Agrupamentos com fieldset e legend */
 fieldset {
 border: 1px solid #e2e8f0;
 border-radius: 6px;
@@ -779,24 +790,24 @@ font-size: 0.95rem;
 outline: none;
 transition: all 0.2s ease-in-out;
 }
-/* ==================== REQUISITO 3: ESTILIZAÇÃO AVANÇADA POR PSEUDO-CLASSES ==================== */
-/* Requisito: Estilizar o estado :focus dos inputs (borda brilhante e outline personalizado) */
+/* ==================== REQUISITO: ESTILIZAÇÃO POR PSEUDO-CLASSES ==================== /
+/ Requisito: Foco ativo com borda brilhante e outline limpo */
 .form-control:focus {
 border-color: #c685e0;
 outline: none;
 box-shadow: 0 0 0 3px rgba(198, 133, 224, 0.25);
 }
-/* Requisito: Feedback visual de validação nativa com :focus:valid (borda verde suave) */
+/* Requisito: Feedback de aprovação nativa (:focus:valid em verde) */
 .form-control:focus:valid {
 border-color: #28a745 !important;
 box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2) !important;
 }
-/* Requisito: Feedback visual de validação nativa com :focus:invalid (borda vermelha suave) */
+/* Requisito: Feedback de erro nativo (:focus:invalid em vermelho) */
 .form-control:focus:invalid {
 border-color: #dc3545 !important;
 box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2) !important;
 }
-/* GRIDS E ALINHAMENTO DO FORMULÁRIO */
+/* Alinhamento de Grids internas */
 .form-row-2 {
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -807,7 +818,7 @@ display: grid;
 grid-template-columns: 2fr 1fr 2fr;
 gap: 15px;
 }
-/* CONFIGURAÇÃO DO BLOCO 3 (RÁDIOS COM ÍCONES) */
+/* Botões de rádio estilizados em lista com ícones */
 .payment-grid {
 display: flex;
 flex-direction: column;
@@ -822,6 +833,7 @@ border-radius: 6px;
 padding: 14px 20px;
 cursor: pointer;
 gap: 12px;
+transition: all 0.2s;
 }
 .payment-option:hover {
 border-color: #ff4757;
@@ -845,7 +857,7 @@ width: 100%;
 font-size: 1.2rem;
 margin-left: auto;
 }
-/* CHECKBOX E SUBMIT */
+/* Caixa de Termos e Envio */
 .terms-group {
 display: flex;
 align-items: flex-start;
@@ -878,12 +890,13 @@ transition: background-color 0.2s;
 .btn-submit:hover {
 background-color: #ff4757;
 }
-/* ==================== GLOBAL FOOTER FIX ==================== */
+/* ==========================================================================
+7. RODAPÉ INSTITUCIONAL (FOOTER)
+========================================================================== */
 footer {
 background-color: #2f3542;
 color: #ffffff;
 padding: 30px 5%;
-font-family: sans-serif;
 font-size: 0.9rem;
 margin-top: 60px;
 }
@@ -896,10 +909,71 @@ gap: 20px;
 max-width: 1200px;
 margin: 0 auto;
 }
+.footer-copy p {
+margin: 0;
+opacity: 0.8;
+}
+.footer-payments {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+.footer-payments span {
+font-weight: 600;
+}
+.payment-badges {
+display: flex;
+gap: 10px;
+}
+.badge {
+background-color: rgba(255, 255, 255, 0.1);
+padding: 6px 12px;
+border-radius: 4px;
+font-size: 0.85rem;
+font-weight: bold;
+user-select: none;
+}
+/* ==========================================================================
+8. MEDIA QUERIES (MEDIA QUERIES DE RESPONSIVIDADE)
+========================================================================== */
 @media (max-width: 768px) {
+header {
+flex-direction: column;
+gap: 15px;
+text-align: center;
+}
+.search-box {
+width: 100%;
+}
+.carousel-content {
+flex-direction: column;
+gap: 20px;
+padding: 20px;
+text-align: center;
+}
+.book-cover img {
+height: 220px;
+}
+.book-info {
+text-align: center;
+}
+.book-info h2 {
+font-size: 1.8rem;
+}
+.book-info p {
+font-size: 1rem;
+margin-bottom: 15px;
+}
 .form-row-2, .form-row-3 {
 grid-template-columns: 1fr;
 gap: 0;
 }
+.footer-container {
+flex-direction: column;
+text-align: center;
 }
-
+.footer-payments {
+flex-direction: column;
+gap: 10px;
+}
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Faturamento | BookLovers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="form-main">
+        <h2>Identificação e Pagamento</h2>
+        <p style="color: #718096; margin-bottom: 30px; font-size: 0.95rem;">Preencha os agrupamentos abaixo de forma correta para expedirmos o envio físico das obras.</p>
+        
+        <!-- Requisito Obrigatório: <form> -->
+        <form action="#" method="POST">
+            
+            <!-- Requisito 2: Três Blocos (<fieldset>) Obrigatórios -->
+            <!-- BLOCO 1 - DADOS PESSOAIS -->
+            <fieldset>
+                <!-- Requisito Obrigatório: <legend> -->
+                <legend>Dados Pessoais</legend>
+                
+                <!-- Requisito Obrigatório: Todo <input> estritamente vinculado à sua <label for="id"> -->
+                <div class="form-group">
+                    <label for="txt-fullname">Nome Completo</label>
+                    <input type="text" id="txt-fullname" class="form-control" placeholder="Digite seu nome completo" required>
+                </div>
+                
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="txt-email">E-mail</label>
+                        <input type="email" id="txt-email" class="form-control" placeholder="nome@provedor.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-cpf">CPF</label>
+                        <!-- Requisito: pattern ou placeholder configurados -->
+                        <input type="text" id="txt-cpf" class="form-control" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+                    </div>
+                </div>
+                
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="txt-phone">Telefone / WhatsApp</label>
+                        <input type="tel" id="txt-phone" class="form-control" placeholder="(11) 99999-9999" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-birthdate">Data de Nascimento</label>
+                        <input type="date" id="txt-birthdate" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="txt-password">Senha de Acesso</label>
+                        <input type="password" id="txt-password" class="form-control" placeholder="Mínimo 6 caracteres" minlength="6" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- Requisito: upload opcional de Foto de Perfil/Avatar type="file" accept="image/*" -->
+                        <label for="file-avatar">Foto de Perfil / Avatar (Opcional)</label>
+                        <input type="file" id="file-avatar" class="form-control" accept="image/*">
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- BLOCO 2 - ENDEREÇO DE ENTREGA -->
+            <fieldset>
+                <legend>Endereço de Entrega</legend>
+                
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label for="txt-cep">CEP</label>
+                        <input type="text" id="txt-cep" class="form-control" placeholder="00000-000" required>
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label for="txt-address">Rua / Logradouro</label>
+                        <input type="text" id="txt-address" class="form-control" placeholder="Avenida, Rua, Alameda..." required>
+                    </div>
+                </div>
+                
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label for="txt-number">Número</label>
+                        <input type="text" id="txt-number" class="form-control" placeholder="123" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-complement">Complemento</label>
+                        <input type="text" id="txt-complement" class="form-control" placeholder="Apto, Sala, Bloco">
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-neighborhood">Bairro</label>
+                        <input type="text" id="txt-neighborhood" class="form-control" placeholder="Ex: Centro" required>
+                    </div>
+                </div>
+                
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="txt-city">Cidade</label>
+                        <input type="text" id="txt-city" class="form-control" placeholder="Sua cidade" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- Requisito: select com tags option de Estado -->
+                        <label for="sel-state">Estado</label>
+                        <select id="sel-state" class="form-control" required>
+                            <option value="" disabled selected>Escolha seu Estado</option>
+                            <option value="SP">São Paulo (SP)</option>
+                            <option value="RJ">Rio de Janeiro (RJ)</option>
+                            <option value="MG">Minas Gerais (MG)</option>
+                            <option value="PR">Paraná (PR)</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- BLOCO 3 - FORMA DE PAGAMENTO -->
+            <fieldset>
+                <legend>Forma de Pagamento</legend>
+                
+                <!-- Requisito: input type="radio" name="pagamento" para PIX, Crédito ou Boleto exibindo ícones visuais ao lado -->
+                <div class="payment-grid">
+                    
+                    <label class="payment-option" for="pay-pix">
+                        <input type="radio" id="pay-pix" name="pagamento" value="pix" required>
+                        <div class="payment-label">
+                            <span>PIX com aprovação instantânea</span>
+                            <span class="payment-icon" aria-hidden="true">💵</span>
+                        </div>
+                    </label>
+                    
+                    <label class="payment-option" for="pay-card">
+                        <input type="radio" id="pay-card" name="pagamento" value="credito">
+                        <div class="payment-label">
+                            <span>Cartão de Crédito (Visa / Mastercard)</span>
+                            <span class="payment-icon" aria-hidden="true">💳</span>
+                        </div>
+                    </label>
+                    
+                    <label class="payment-option" for="pay-boleto">
+                        <input type="radio" id="pay-boleto" name="pagamento" value="boleto">
+                        <div class="payment-label">
+                            <span>Boleto Bancário Impresso</span>
+                            <span class="payment-icon" aria-hidden="true">📄</span>
+                        </div>
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Requisito 3: Checkbox de "Aceito os Termos de Uso" (required) -->
+            <div class="terms-group">
+                <input type="checkbox" id="chk-terms" required>
+                <label for="chk-terms">Declaro que li e aceito integralmente as diretrizes descritas nos Termos de Uso da plataforma.</label>
+            </div>
+            
+            <!-- Requisito Obrigatório: botão de envio com texto exato -->
+            <button type="submit" class="btn-submit">Concluir Cadastro e Pagar</button>
+
+        </form>
+    </main>
+
+</body>
+</html>

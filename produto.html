@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>As Serpentes e as Asas Feitas de Noite | BookLovers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO REUTILIZADO DA LOJA PRINCIPAL -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.webp" alt="Logotipo Oficial BookLovers">
+                <h1>BookLovers💜</h1>
+            </a>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Busque por livros, autores...">
+            <button aria-label="Pesquisar">🔍</button>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#romances">Romances</a></li>
+                <li><a href="index.html#fantasias">Fantasias</a></li>
+                <li><a href="index.html#terror">Terror</a></li>
+                <li><a href="index.html#thriller">Thriller</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <a href="#perfil" aria-label="Minha Conta">👤</a>
+                <a href="carrinho.html" aria-label="Carrinho de compras">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- BLOCO PRINCIPAL DO PRODUTO -->
+    <main class="container">
+        <div class="product-wrapper">
+            
+            <!-- Coluna da Esquerda: Galeria de Imagens -->
+            <div class="column-left">
+                <!-- Foto Principal (Quadrada) -->
+                <img src="asasrelu.jpg" alt="Foto principal do livro As Serpentes e as Asas Feitas de Noite" class="main-image">
+                
+                <!-- Miniaturas (Thumbnails) -->
+                <div class="thumbnails">
+                    <img src="powerless.jpg" alt="Miniatura do livro Powerless" class="thumb">
+                    <img src="caçador.jpg" alt="Miniatura do livro Caçador Sem Coração" class="thumb">
+                    <img src="omassacre.jpg" alt="Miniatura do livro O Massacre da Família Hope" class="thumb">
+                    <img src="academia.jpg" alt="Miniatura do livro Academia dos Casos Arquivados" class="thumb">
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Informações de Compra -->
+            <div class="column-right">
+                <nav class="breadcrumb">
+                    <a href="index.html">Início</a> &gt; <a href="index.html#fantasias">Fantasias</a> &gt; <a href="#">Detalhes</a>
+                </nav>
+
+                <h1 class="product-title">As Serpentes e as Asas Feitas de Noite</h1>
+                <p class="product-author-detail">Série Coroas de Nyaxia — Volume 1</p>
+
+                <div class="stars">
+                    ★★★★★ <span class="review-count">(4.9 — 1.250 avaliações)</span>
+                </div>
+
+                <div class="price-box">
+                    <span class="old-price">R$ 89,90</span>
+                    <span class="current-price">R$ 59,90</span>
+                </div>
+
+                <!-- Seletor de Opções (Formatos do livro) -->
+                <div class="selectors">
+                    <label for="book-format">Escolha o modelo:</label>
+                    <select id="book-format" name="book-format">
+                        <option value="capa-dura">Capa Dura Premium</option>
+                        <option value="capa-mole">Capa Mole Standard</option>
+                        <option value="especial">Edição Especial de Colecionador</option>
+                    </select>
+                </div>
+
+                <a href="carrinho.html" class="btn-add-to-cart">Adicionar ao Carrinho</a>
+            </div>
+        </div>
+
+        <!-- TABELA DE ESPECIFICAÇÕES TÉCNICAS (REQUISITO DA FICHA) -->
+        <section class="technical-specifications">
+            <h2 class="spec-table-title">Especificações Técnicas</h2>
+            <table class="spec-table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Autor</th>
+                        <td>Carissa Broadbent</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Editora</th>
+                        <td>Rocco</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Dimensões</th>
+                        <td>16cm x 15cm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Garantia</th>
+                        <td>12 meses</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Material</th>
+                        <td>Papel</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- RODAPÉ DA LOJA REUTILIZADO -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-copy">
+                <p>&copy; BookLovers. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-payments">
+                <span>Formas de Pagamento:</span>
+                <div class="payment-badges">
+                    <span class="badge" title="Pix">💵 Pix</span>
+                    <span class="badge" title="Cartão de Crédito">💳 Crédito</span>
+                    <span class="badge" title="Boleto Bancário">📄 Boleto</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Conexão com o script.js para dar funcionalidade aos cliques das miniaturas -->
+    <script src="script.js"></script>
+
+</body>
+</html>

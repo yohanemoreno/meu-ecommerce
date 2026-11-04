@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Carrinho | BookLovers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cart-container">
+        
+        <!-- Requisito 1: Tabela de Itens Completa -->
+        <main class="cart-main">
+            <h2>Seu Carrinho de Compras</h2>
+            
+            <table class="cart-table">
+                <!-- Requisito Obrigatório: caption -->
+                <caption>Relação de livros selecionados para compra e controle de quantidades.</caption>
+                
+                <!-- Requisito Obrigatório: thead -->
+                <thead>
+                    <tr>
+                        <!-- Requisito Obrigatório: th scope="col" -->
+                        <th scope="col">Produto</th>
+                        <th scope="col">Preço Unitário</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                
+                <!-- Requisito Obrigatório: tbody com pelo menos 3 produtos listados -->
+                <tbody>
+                    <!-- Produto 1 -->
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <!-- Requisito: Miniatura quadrada 64px com object-fit cover -->
+                                <img src="asasrelu.jpg" alt="Livro As Serpentes e as Asas Feitas de Noite" class="product-thumb">
+                                <div class="product-details">
+                                    <h4>As Serpentes e as Asas Feitas de Noite</h4>
+                                    <p>Fantasia</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>R$ 59,90</td>
+                        <td>
+                            <!-- Requisito: input number com min=1 e value=1 -->
+                            <input type="number" class="qty-input" min="1" value="1">
+                        </td>
+                        <td>R$ 59,90</td>
+                        <td>
+                            <!-- Requisito: Botão de remover item -->
+                            <button class="btn-remove" title="Remover item do carrinho">🗑️</button>
+                        </td>
+                    </tr>
+                    
+                    <!-- Produto 2 -->
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="jantarsecreto.jpg" alt="Livro Jantar Secreto" class="product-thumb">
+                                <div class="product-details">
+                                    <h4>Jantar Secreto</h4>
+                                    <p>Thriller</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>R$ 48,90</td>
+                        <td>
+                            <input type="number" class="qty-input" min="1" value="1">
+                        </td>
+                        <td>R$ 48,90</td>
+                        <td>
+                            <button class="btn-remove" title="Remover item do carrinho">🗑️</button>
+                        </td>
+                    </tr>
+                    
+                    <!-- Produto 3 -->
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="freud.jpg" alt="Livro Psicologia das Massas" class="product-thumb">
+                                <div class="product-details">
+                                    <h4>Psicologia das massas e análise do eu</h4>
+                                    <p>Ciências Humanas</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>R$ 49,90</td>
+                        <td>
+                            <input type="number" class="qty-input" min="1" value="1">
+                        </td>
+                        <td>R$ 49,90</td>
+                        <td>
+                            <button class="btn-remove" title="Remover item do carrinho">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+                
+                <!-- Requisito Obrigatório: tfoot com colspan exibindo frete grátis ou soma parcial -->
+                <tfoot>
+                    <tr>
+                        <td colspan="5">🎉 Excelente escolha! Seu pedido atingiu a meta da livraria e ganhou <strong>Frete Grátis</strong> para todo o Brasil.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </main>
+
+        <!-- Requisito 2: Card Lateral de Resumo do Pedido -->
+        <aside class="order-summary">
+            <h2>Resumo do Pedido</h2>
+            
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>R$ 158,70</span>
+            </div>
+            
+            <div class="summary-row">
+                <span>Valor do Frete</span>
+                <span style="color: #28A745; font-weight: 600;">Grátis</span>
+            </div>
+            
+            <!-- Requisito: Campo para Cupom (input type="text" + botão "Aplicar") -->
+            <div class="coupon-container">
+                <label for="coupon-input">Cupom de Desconto</label>
+                <div class="coupon-box">
+                    <input type="text" id="coupon-input" placeholder="Ex: LERLIVROS10">
+                    <button class="btn-apply">Aplicar</button>
+                </div>
+            </div>
+            
+            <div class="summary-row total">
+                <span>Valor Total</span>
+                <span>R$ 158,70</span>
+            </div>
+            
+            <!-- Requisito Obrigatório: Botão de destaque com rota configurada -->
+            <a href="cadastro.html" class="btn-checkout">Finalizar Compra &rarr;</a>
+        </aside>
+
+    </div>
+
+</body>
+</html>
