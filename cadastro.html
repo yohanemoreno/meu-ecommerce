@@ -9,7 +9,7 @@
 <body>
 
     <main class="form-main">
-        <h2>Identificação e Pagamento</h2>
+        <h1>Identificação e Pagamento</h1>
         <p style="color: #718096; margin-bottom: 30px; font-size: 0.95rem;">Preencha os agrupamentos abaixo de forma correta para expedirmos o envio físico das obras.</p>
         
         <!-- Requisito Obrigatório: <form> -->
@@ -120,28 +120,28 @@
                 <div class="payment-grid">
                     
                     <label class="payment-option" for="pay-pix">
-                        <input type="radio" id="pay-pix" name="pagamento" value="pix" required>
-                        <div class="payment-label">
-                            <span>PIX com aprovação instantânea</span>
-                            <span class="payment-icon" aria-hidden="true">💵</span>
-                        </div>
-                    </label>
-                    
-                    <label class="payment-option" for="pay-card">
-                        <input type="radio" id="pay-card" name="pagamento" value="credito">
-                        <div class="payment-label">
-                            <span>Cartão de Crédito (Visa / Mastercard)</span>
-                            <span class="payment-icon" aria-hidden="true">💳</span>
-                        </div>
-                    </label>
-                    
-                    <label class="payment-option" for="pay-boleto">
-                        <input type="radio" id="pay-boleto" name="pagamento" value="boleto">
-                        <div class="payment-label">
-                            <span>Boleto Bancário Impresso</span>
-                            <span class="payment-icon" aria-hidden="true">📄</span>
-                        </div>
-                    </label>
+        <input type="radio" id="pay-pix" name="pagamento" value="pix" required>
+            <span class="payment-label">
+        <span>PIX com aprovação instantânea</span>
+        <span class="payment-icon" aria-hidden="true">💵</span>
+    </span>
+</label>
+
+<label class="payment-option" for="pay-card">
+    <input type="radio" id="pay-card" name="pagamento" value="credito">
+    <span class="payment-label">
+        <span>Cartão de Crédito (Visa / Mastercard)</span>
+        <span class="payment-icon" aria-hidden="true">💳</span>
+    </span>
+</label>
+
+<label class="payment-option" for="pay-boleto">
+    <input type="radio" id="pay-boleto" name="pagamento" value="boleto">
+    <span class="payment-label">
+        <span>Boleto Bancário Impresso</span>
+        <span class="payment-icon" aria-hidden="true">📄</span>
+    </span>
+</label>
                 </div>
             </fieldset>
 
